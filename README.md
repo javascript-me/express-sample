@@ -2,7 +2,7 @@
 
 npm install -g express
 npm install -g express-generator
-express my-first-express
+express express-sample
 
 npm install
 
