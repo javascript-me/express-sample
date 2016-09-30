@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('my-first-express:server');
+var debug = require('debug')('express-sample:server');
 var http = require('http');
 
 /**
@@ -27,7 +27,7 @@ var server = http.createServer(app);
 
 server.listen(port);
 
-console.log("Open: http://localhost:3000/")
+console.log("Open: http://localhost:3000/");
 
 server.on('error', onError);
 server.on('listening', onListening);
