@@ -1,46 +1,32 @@
 
-var result1 = 0;
-var result2 = 0;
-var result3 = 0;
+function Counter(id) {
 
-function update() {
-    $("#result1").text(result1);
-    $("#result2").text(result2);
-    $("#result3").text(result3);
+    this.id = id;
+
+    this.result = 0;
+
+    this.increment = function () {
+        this.result++;
+        this.update();
+    };
+
+    this.decrement = function () {
+        this.result--;
+        this.update();
+    };
+
+    this.update = function () {
+        $(this.id).text(this.result);
+    };
+
 }
+
+var counter1 = new Counter("#result1");
+var counter2 = new Counter("#result2");
+var counter3 = new Counter("#result3");
 
 $(document).ready(function(){
-    update();
+    counter1.update();
+    counter2.update();
+    counter3.update();
 });
-
-function increment1() {
-    result1++;
-    update();
-}
-
-function decrement1() {
-    result1--;
-    update();
-}
-
-
-function increment2() {
-    result2++;
-    update();
-}
-
-function decrement2() {
-    result2--;
-    update();
-}
-
-
-function increment3() {
-    result3++;
-    update();
-}
-
-function decrement3() {
-    result3--;
-    update();
-}
